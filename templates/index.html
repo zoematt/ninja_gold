@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+</head>
+<body>
+    <div id="container">
+        <div id="mainrow">
+            <div class="gold_boxes">
+            {% if session ['gold'] >=0 %}
+            <h2>{{session ['gold']}}</h2>
+            {% endif %}
+                <h3>Farm</h3>
+                <p>(earn 10-20 golds)</p>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="gold" value="farm">
+                    <button type="submit">Find Gold</button>
+                </form>
+            </div>
+            <div class="gold_boxes">
+                <h3>Cave</h3>
+                <p>(earn 5-10 golds)</p>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="gold" value="cave">
+                    <button type="submit">Find Gold</button>
+                </form>
+            </div>
+            <div class="gold_boxes">
+                <h3>House</h3>
+                <p>(earn 2-5 golds)</p>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="gold" value="house">
+                    <button type="submit">Find Gold</button>
+                </form>
+            </div>
+            <div class="gold_boxes">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="gold" value="casino">
+                    <button type="submit">Find Gold</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
